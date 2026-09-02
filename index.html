@@ -118,6 +118,23 @@
   .fd.d-sun .sp{background:var(--sun-bg);color:var(--accent-d)} .fd.d-mid .sp{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent-d)} .fd.d-rain .sp{background:var(--rain-bg);color:var(--rain)} .fd.d-storm .sp{background:var(--bad-bg);color:var(--bad)}
   .loading{padding:30px;text-align:center;color:rgba(255,255,255,.8);font-size:14px}
   .mtable{margin-top:18px}
+  /* cidades vale */
+  .cidades{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media(max-width:720px){.cidades{grid-template-columns:1fr 1fr}}
+  @media(max-width:460px){.cidades{grid-template-columns:1fr}}
+  .cid{border:1px solid var(--line);border-radius:13px;padding:15px 16px;background:var(--paper);box-shadow:var(--shadow);border-left:5px solid var(--line)}
+  .cid.r-ok{border-left-color:var(--good)} .cid.r-watch{border-left-color:var(--warn)} .cid.r-alert{border-left-color:var(--bad)}
+  .cid .top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .cid .nm{font-weight:800;font-size:15px}
+  .cid .rt{font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px}
+  .cid.r-ok .rt{background:var(--good-bg);color:var(--good)} .cid.r-watch .rt{background:var(--warn-bg);color:var(--warn)} .cid.r-alert .rt{background:var(--bad-bg);color:var(--bad)}
+  .cid .met{margin-top:10px;display:flex;gap:14px;font-size:12.5px;color:var(--muted)}
+  .cid .met b{color:var(--ink);font-weight:700}
+  .cid .act{margin-top:10px;font-size:12.5px;font-weight:700;padding-top:9px;border-top:1px dashed var(--line)}
+  .cid.r-ok .act{color:var(--good)} .cid.r-watch .act{color:var(--warn)} .cid.r-alert .act{color:var(--bad)}
+  .summary{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+  .schip{font-size:13px;font-weight:800;padding:8px 14px;border-radius:10px;display:flex;align-items:center;gap:7px}
+  .schip.ok{background:var(--good-bg);color:var(--good)} .schip.watch{background:var(--warn-bg);color:var(--warn)} .schip.alert{background:var(--bad-bg);color:var(--bad)}
   footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12.5px;color:var(--muted)}
   footer b{color:var(--green2)}
 </style>
@@ -134,6 +151,7 @@
     <button class="tab" role="tab" aria-selected="true" aria-controls="p1" id="t1">🛑 Parar as campanhas?</button>
     <button class="tab" role="tab" aria-selected="false" aria-controls="p2" id="t2">🌧️ Chuva × CPA</button>
     <button class="tab" role="tab" aria-selected="false" aria-controls="p3" id="t3">📡 Monitor automático</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="p4" id="t4">🏞️ Vale do Itajaí</button>
   </div>
 
   <!-- ============ ABA 1 ============ -->
@@ -227,6 +245,31 @@
     </section>
   </div>
 
+  <!-- ============ ABA 4 · VALE ============ -->
+  <div class="pane" id="p4" role="tabpanel" aria-labelledby="t4">
+    <section style="margin-top:0">
+      <div class="kick">Radar regional · ao vivo</div>
+      <h2>Vale do Itajaí — risco por cidade 🏞️</h2>
+      <p class="lead">Nosso público vem das cidades vizinhas. Quando uma delas entra em situação crítica de chuva — como <b>Blumenau embaixo d'água</b> — a gente pausa a venda pra aquela região <b>antes</b> de gastar à toa e antes de anunciar diversão na hora errada. O risco aqui olha a <b>chuva acumulada</b> (o que causa enchente), não só a do dia.</p>
+      <div class="summary" id="vale-summary"></div>
+      <div class="cidades" id="vale-cidades"><div class="card"><div style="color:var(--muted);text-align:center;padding:16px">Carregando cidades do Vale…</div></div></div>
+      <p class="note">Risco pela chuva prevista acumulada em 3 dias: 🟢 &lt;30mm normal · 🟡 30–80mm atenção · 🔴 &gt;80mm crítico (histórico de enchente na região). Fonte: Open-Meteo, ao vivo. É um <b>alerta de decisão</b>, não previsão oficial de Defesa Civil — sempre cruzar com as autoridades em evento real.</p>
+    </section>
+    <section>
+      <div class="card">
+        <h3 style="font-size:15px;margin-bottom:10px">O que fazer em cada nível</h3>
+        <table>
+          <thead><tr><th>Nível</th><th>Campanhas de venda p/ a cidade</th><th>Criativos</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag" style="background:var(--good-bg);color:var(--good)">🟢 Normal</span></td><td>rodam normal (regra de clima)</td><td>todos</td></tr>
+            <tr><td><span class="tag" style="background:var(--warn-bg);color:var(--warn)">🟡 Atenção</span></td><td>reduz teto, vira p/ antecipação</td><td>evita "vem hoje"</td></tr>
+            <tr><td><span class="tag" style="background:var(--bad-bg);color:var(--bad)">🔴 Crítico</span></td><td>pausa venda p/ a região</td><td>pausa tudo de "diversão" (sensibilidade de marca)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
   <footer>
     <span><b>Cardô Marketing</b> — Tráfego &amp; Performance</span>
     <span>Spitz Pomer · Verba × Clima × CPA</span>
@@ -286,6 +329,51 @@ function plan(mm,prob,isWknd){
     }</tbody></table>`;
   }catch(e){
     document.getElementById('mon').innerHTML='<div class="loading">Não consegui carregar o clima agora. <button onclick="location.reload()" style="margin-left:8px;padding:6px 14px;border:0;border-radius:8px;background:#fff;color:#0B5A4F;font-weight:700;cursor:pointer">Tentar de novo</button></div>';
+  }
+})();
+
+/* ---- Vale do Itajaí: risco por cidade (chuva acumulada 3 dias) ---- */
+const VALE=[
+  {nm:'Pomerode',lat:-26.74,lon:-49.18,base:true},
+  {nm:'Blumenau',lat:-26.92,lon:-49.07},
+  {nm:'Gaspar',lat:-26.93,lon:-48.96},
+  {nm:'Timbó',lat:-26.82,lon:-49.27},
+  {nm:'Indaial',lat:-26.90,lon:-49.23},
+  {nm:'Itajaí',lat:-26.91,lon:-48.66},
+  {nm:'Brusque',lat:-27.10,lon:-48.92},
+  {nm:'Rio do Sul',lat:-27.21,lon:-49.64},
+  {nm:'Jaraguá do Sul',lat:-26.49,lon:-49.07}
+];
+function risco(acc3){ // mm acumulados em 3 dias
+  if(acc3>=80) return ['alert','🔴 Crítico','Pausar venda p/ a região'];
+  if(acc3>=30) return ['watch','🟡 Atenção','Reduzir e antecipar'];
+  return ['ok','🟢 Normal','Rodar normal'];
+}
+(async function(){
+  const box=document.getElementById('vale-cidades'); if(!box) return;
+  try{
+    const results=await Promise.all(VALE.map(async c=>{
+      const u=`https://api.open-meteo.com/v1/forecast?latitude=${c.lat}&longitude=${c.lon}&daily=precipitation_sum,precipitation_probability_max&forecast_days=3&timezone=America/Sao_Paulo`;
+      const w=await (await fetch(u)).json();
+      const acc3=(w.daily.precipitation_sum||[]).reduce((a,b)=>a+(b||0),0);
+      const probMax=Math.max(...(w.daily.precipitation_probability_max||[0]));
+      return {...c,acc3,probMax};
+    }));
+    results.sort((a,b)=>b.acc3-a.acc3);
+    let nOk=0,nW=0,nA=0;
+    box.innerHTML=results.map(c=>{
+      const r=risco(c.acc3); if(r[0]==='ok')nOk++;else if(r[0]==='watch')nW++;else nA++;
+      return `<div class="cid r-${r[0]}"><div class="top"><span class="nm">${c.nm}${c.base?' ⭐':''}</span><span class="rt">${r[1]}</span></div>
+        <div class="met"><span>💧 3 dias: <b>${c.acc3.toFixed(0)}mm</b></span><span>prob <b>${c.probMax}%</b></span></div>
+        <div class="act">${r[2]}</div></div>`;
+    }).join('');
+    const chips=[];
+    if(nA)chips.push(`<span class="schip alert">🔴 ${nA} em situação crítica</span>`);
+    if(nW)chips.push(`<span class="schip watch">🟡 ${nW} em atenção</span>`);
+    chips.push(`<span class="schip ok">🟢 ${nOk} normais</span>`);
+    document.getElementById('vale-summary').innerHTML=chips.join('');
+  }catch(e){
+    box.innerHTML='<div class="card"><div style="color:var(--bad);text-align:center;padding:16px">Não consegui carregar as cidades. <button onclick="location.reload()" style="margin-left:8px;padding:6px 14px;border:0;border-radius:8px;background:var(--green);color:#fff;font-weight:700;cursor:pointer">Tentar de novo</button></div></div>';
   }
 })();
 </script>
