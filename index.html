@@ -4,219 +4,259 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Verba, Clima & CPA — Spitz Pomer</title>
+<title>Relatório · Verba × Clima — Spitz Pomer</title>
 <style>
   :root{
-    --paper:#FFFFFF;--bg:#F5F7F3;--ink:#12241E;--muted:#5F6F66;--faint:#8A988E;--line:#E5E9E1;
-    --green:#0B5A4F;--green2:#0F7A6B;--accent:#EF7D00;--accent-d:#CC6A00;
-    --sun:#E8A400;--sun-bg:#FCF3DA;--rain:#3E7CB1;--rain-bg:#E7F0F7;
-    --good:#2C8C5A;--good-bg:#E9F3EC;--bad:#C8462F;--bad-bg:#FBE9E4;--warn:#C98A00;--warn-bg:#FBF1DA;
-    --shadow:0 1px 2px rgba(18,36,30,.04),0 10px 30px rgba(18,36,30,.05);
+    --paper:#FFFFFF;--bg:#EFEDE7;--panel:#FBFAF7;--ink:#182A24;--muted:#5C6B62;--faint:#8B978E;--line:#E1E0D8;--line2:#D2D2C8;
+    --green:#0B4A42;--green2:#0F7A6B;--accent:#EF7D00;--accent-d:#C86400;
+    --sun:#D99400;--sun-bg:#F9EFD5;--rain:#356F9E;--rain-bg:#E4EDF4;
+    --good:#2C8C5A;--good-bg:#E6F1EA;--bad:#BB4028;--bad-bg:#F7E7E2;--warn:#B5820A;--warn-bg:#F8EFD6;
+    --shadow:0 1px 2px rgba(24,42,36,.05),0 12px 34px rgba(24,42,36,.07);
+    --serif:ui-serif,Georgia,"Times New Roman",serif;
   }
   @media(prefers-color-scheme:dark){:root{
-    --paper:#122019;--bg:#0A130F;--ink:#E9F0EA;--muted:#9DAEA4;--faint:#7C8D82;--line:#22322A;
-    --green:#EAF1EC;--green2:#63D8BE;--accent:#FF9A33;--accent-d:#FFB055;
-    --sun:#E7B84D;--sun-bg:#2A2413;--rain:#7FB2DB;--rain-bg:#14222E;
-    --good:#5BC98A;--good-bg:#132A20;--bad:#F0765C;--bad-bg:#2C1712;--warn:#E7B84D;--warn-bg:#2A2413;
-    --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 34px rgba(0,0,0,.4);
+    --paper:#101B17;--bg:#0A120F;--panel:#152420;--ink:#E9F0EA;--muted:#9DAEA4;--faint:#75857B;--line:#22322A;--line2:#2C3D34;
+    --green:#EAF1EC;--green2:#63D8BE;--accent:#FF9A33;--accent-d:#FFB460;
+    --sun:#E7B84D;--sun-bg:#282112;--rain:#7FB2DB;--rain-bg:#122130;--good:#5BC98A;--good-bg:#12291F;--bad:#F0765C;--bad-bg:#2C1712;--warn:#E7B84D;--warn-bg:#282112;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 14px 40px rgba(0,0,0,.45);
   }}
-  :root[data-theme="light"]{--paper:#FFFFFF;--bg:#F5F7F3;--ink:#12241E;--muted:#5F6F66;--faint:#8A988E;--line:#E5E9E1;--green:#0B5A4F;--green2:#0F7A6B;--accent:#EF7D00;--accent-d:#CC6A00;--sun:#E8A400;--sun-bg:#FCF3DA;--rain:#3E7CB1;--rain-bg:#E7F0F7;--good:#2C8C5A;--good-bg:#E9F3EC;--bad:#C8462F;--bad-bg:#FBE9E4;--warn:#C98A00;--warn-bg:#FBF1DA;--shadow:0 1px 2px rgba(18,36,30,.04),0 10px 30px rgba(18,36,30,.05)}
-  :root[data-theme="dark"]{--paper:#122019;--bg:#0A130F;--ink:#E9F0EA;--muted:#9DAEA4;--faint:#7C8D82;--line:#22322A;--green:#EAF1EC;--green2:#63D8BE;--accent:#FF9A33;--accent-d:#FFB055;--sun:#E7B84D;--sun-bg:#2A2413;--rain:#7FB2DB;--rain-bg:#14222E;--good:#5BC98A;--good-bg:#132A20;--bad:#F0765C;--bad-bg:#2C1712;--warn:#E7B84D;--warn-bg:#2A2413;--shadow:0 1px 2px rgba(0,0,0,.3),0 12px 34px rgba(0,0,0,.4)}
+  :root[data-theme="light"]{--paper:#FFFFFF;--bg:#EFEDE7;--panel:#FBFAF7;--ink:#182A24;--muted:#5C6B62;--faint:#8B978E;--line:#E1E0D8;--line2:#D2D2C8;--green:#0B4A42;--green2:#0F7A6B;--accent:#EF7D00;--accent-d:#C86400;--sun:#D99400;--sun-bg:#F9EFD5;--rain:#356F9E;--rain-bg:#E4EDF4;--good:#2C8C5A;--good-bg:#E6F1EA;--bad:#BB4028;--bad-bg:#F7E7E2;--warn:#B5820A;--warn-bg:#F8EFD6;--shadow:0 1px 2px rgba(24,42,36,.05),0 12px 34px rgba(24,42,36,.07)}
+  :root[data-theme="dark"]{--paper:#101B17;--bg:#0A120F;--panel:#152420;--ink:#E9F0EA;--muted:#9DAEA4;--faint:#75857B;--line:#22322A;--line2:#2C3D34;--green:#EAF1EC;--green2:#63D8BE;--accent:#FF9A33;--accent-d:#FFB460;--sun:#E7B84D;--sun-bg:#282112;--rain:#7FB2DB;--rain-bg:#122130;--good:#5BC98A;--good-bg:#12291F;--bad:#F0765C;--bad-bg:#2C1712;--warn:#E7B84D;--warn-bg:#282112;--shadow:0 1px 2px rgba(0,0,0,.3),0 14px 40px rgba(0,0,0,.45)}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
-  .doc{max-width:860px;margin:0 auto;padding:0 22px 70px}
-  h1,h2,h3{color:var(--ink);line-height:1.16}
-  header{padding:42px 0 22px}
-  .rule{display:flex;align-items:center;gap:9px;margin-bottom:16px}
-  .rule .t{width:26px;height:4px;border-radius:3px;background:var(--accent)}
-  .rule span{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--green2)}
-  header h1{font-size:clamp(24px,4.2vw,34px);font-weight:800;letter-spacing:-.02em;text-wrap:balance;max-width:22ch}
-  header .sub{margin-top:12px;font-size:14px;color:var(--muted)}
-  /* tabs */
-  .tabs{display:flex;gap:6px;flex-wrap:wrap;position:sticky;top:0;z-index:20;background:var(--bg);padding:14px 0 12px;border-bottom:1px solid var(--line);margin-bottom:8px}
-  .tab{border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:10px 16px;font-size:13.5px;font-weight:700;color:var(--muted);cursor:pointer;transition:.15s;display:flex;align-items:center;gap:7px}
-  .tab:hover{border-color:var(--accent)}
-  .tab[aria-selected="true"]{background:var(--green);color:#fff;border-color:var(--green)}
-  :root[data-theme="dark"] .tab[aria-selected="true"]{color:#0A130F}
-  .tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .pane{display:none;padding-top:24px}
-  .pane.on{display:block;animation:fade .25s}
-  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
-  .kick{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--green2);margin-bottom:6px}
-  h2{font-size:21px;font-weight:800;letter-spacing:-.01em;margin-bottom:8px}
-  .lead{color:var(--muted);font-size:15px;max-width:65ch;margin-bottom:20px}
-  section{margin-top:32px}
-  .card{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:22px 24px;box-shadow:var(--shadow)}
-  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  @media(max-width:640px){.cards3{grid-template-columns:1fr}}
-  .kpi .l{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-  .kpi .v{font-size:28px;font-weight:800;letter-spacing:-.02em;margin:7px 0 2px}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI",system-ui,sans-serif;line-height:1.62;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+  .sheet{max-width:900px;margin:26px auto;background:var(--paper);border:1px solid var(--line2);border-radius:6px;box-shadow:var(--shadow);overflow:hidden}
+  .pad{padding:0 clamp(22px,5vw,58px)}
+  h1,h2,h3,h4{color:var(--ink);line-height:1.16}
+
+  /* ===== COVER / cabeçalho ===== */
+  .cover{background:var(--green);color:#F3F1E9;padding:clamp(30px,5vw,48px) clamp(22px,5vw,58px) clamp(26px,4vw,38px);position:relative;overflow:hidden}
+  :root[data-theme="dark"] .cover{background:linear-gradient(160deg,#0E2A25,#0A1B17)}
+  .cover::after{content:"";position:absolute;right:-70px;top:-70px;width:240px;height:240px;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 42%,transparent),transparent 68%);pointer-events:none}
+  .brandline{display:flex;align-items:center;gap:10px;margin-bottom:26px}
+  .brandline .mk{width:30px;height:5px;border-radius:3px;background:var(--accent)}
+  .brandline b{font-size:12.5px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#EBD9C2}
+  .cover .doc-t{font-family:var(--serif);font-size:clamp(28px,5.2vw,46px);font-weight:700;line-height:1.05;letter-spacing:-.01em;color:#fff;max-width:16ch;text-wrap:balance}
+  .cover .doc-s{margin-top:16px;font-size:15px;color:#C9D6CF;max-width:56ch}
+  .metabar{margin-top:30px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:color-mix(in srgb,#fff 16%,transparent);border-radius:8px;overflow:hidden}
+  @media(max-width:620px){.metabar{grid-template-columns:1fr 1fr}}
+  .metabar .m{background:color-mix(in srgb,var(--green) 82%,#000);padding:12px 14px}
+  :root[data-theme="dark"] .metabar .m{background:#0C221D}
+  .metabar .m .k{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#9FB6AD}
+  .metabar .m .v{font-size:13.5px;font-weight:700;color:#F3F1E9;margin-top:3px}
+
+  /* ===== nav de capítulos ===== */
+  .nav{display:flex;gap:2px;flex-wrap:wrap;background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;padding:0 clamp(10px,3vw,30px)}
+  .tab{border:0;background:none;border-bottom:3px solid transparent;padding:15px 16px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;transition:.15s;display:flex;align-items:center;gap:8px}
+  .tab .ix{font-family:var(--serif);font-size:13px;color:var(--faint);font-weight:700}
+  .tab:hover{color:var(--ink)}
+  .tab[aria-selected="true"]{color:var(--green);border-bottom-color:var(--accent)}
+  :root[data-theme="dark"] .tab[aria-selected="true"]{color:var(--green2)}
+  .tab[aria-selected="true"] .ix{color:var(--accent-d)}
+  .tab:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+  .pane{display:none;padding-top:clamp(26px,4vw,40px);padding-bottom:clamp(30px,5vw,50px)}
+  .pane.on{display:block;animation:fade .3s}
+  @keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+  .chapline{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+  .chapno{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--accent-d)}
+  .kick{font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green2)}
+  h2{font-family:var(--serif);font-size:clamp(21px,3.2vw,27px);font-weight:700;letter-spacing:-.01em;margin-bottom:10px}
+  .lead{color:var(--muted);font-size:15px;max-width:66ch;margin-bottom:22px}
+  section{margin-top:34px}
+  section:first-of-type{margin-top:0}
+  h3{font-size:15.5px;font-weight:800;margin-bottom:12px}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px;box-shadow:0 1px 2px rgba(24,42,36,.03)}
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+  @media(max-width:620px){.cards3{grid-template-columns:1fr}}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .kpi .l{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .kpi .v{font-family:var(--serif);font-size:30px;font-weight:700;letter-spacing:-.01em;margin:8px 0 2px}
   .kpi .s{font-size:12.5px;color:var(--muted)}
   .v.sun{color:var(--accent-d)} .v.rain{color:var(--rain)} .v.bad{color:var(--bad)} .v.good{color:var(--good)}
-  .banner{border-radius:12px;padding:16px 20px;font-size:14.5px;display:grid;grid-template-columns:24px 1fr;gap:13px}
-  .banner.key{background:color-mix(in srgb,var(--accent) 9%,var(--paper));border:1px solid color-mix(in srgb,var(--accent) 32%,transparent)}
-  .banner.key b{color:var(--accent-d)}
-  .banner.bad{background:var(--bad-bg);border:1px solid color-mix(in srgb,var(--bad) 35%,transparent)}
-  .banner.bad b{color:var(--bad)}
-  /* prós e contras */
-  .pc{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+
+  .callout{border-radius:12px;padding:17px 22px;font-size:14.5px;display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start}
+  .callout .ic{font-size:20px;line-height:1.3}
+  .callout.key{background:color-mix(in srgb,var(--accent) 8%,var(--panel));border:1px solid color-mix(in srgb,var(--accent) 34%,transparent)}
+  .callout.key b{color:var(--accent-d)}
+  .callout.bad{background:var(--bad-bg);border:1px solid color-mix(in srgb,var(--bad) 32%,transparent)}
+  .callout.bad b{color:var(--bad)}
+
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:4px}
   @media(max-width:640px){.pc{grid-template-columns:1fr}}
-  .pc .col{border-radius:14px;padding:20px 22px;border:1px solid var(--line);box-shadow:var(--shadow)}
-  .pc .ben{background:var(--good-bg);border-color:color-mix(in srgb,var(--good) 35%,transparent)}
-  .pc .mal{background:var(--bad-bg);border-color:color-mix(in srgb,var(--bad) 35%,transparent)}
-  .pc h3{font-size:15px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+  .pc .col{border-radius:13px;padding:20px 22px;border:1px solid var(--line);background:var(--panel)}
+  .pc .ben{border-top:3px solid var(--good)} .pc .mal{border-top:3px solid var(--bad)}
+  .pc h3{font-size:14.5px;margin-bottom:3px;display:flex;align-items:center;gap:8px}
   .pc .ben h3{color:var(--good)} .pc .mal h3{color:var(--bad)}
-  .pc .cta{font-size:12px;color:var(--muted);margin-bottom:12px}
-  .pc ul{list-style:none;display:grid;gap:11px}
+  .pc .cta{font-size:11.5px;color:var(--faint);margin-bottom:14px;text-transform:uppercase;letter-spacing:.05em;font-weight:700}
+  .pc ul{list-style:none;display:grid;gap:12px}
   .pc li{font-size:13.5px;padding-left:22px;position:relative;color:var(--ink)}
-  .pc li b{color:var(--ink)}
-  .pc .ben li::before{content:"✓";position:absolute;left:0;font-weight:800;color:var(--good)}
-  .pc .mal li::before{content:"✕";position:absolute;left:0;font-weight:800;color:var(--bad)}
-  .pc li .rev{display:block;font-size:11.5px;color:var(--muted);font-weight:600;margin-top:2px}
-  /* barras */
-  .barrow{display:grid;grid-template-columns:130px 1fr 66px;align-items:center;gap:12px;margin:9px 0}
+  .pc li b{font-weight:700}
+  .pc .ben li::before{content:"+";position:absolute;left:0;font-weight:800;color:var(--good);font-size:15px}
+  .pc .mal li::before{content:"−";position:absolute;left:0;font-weight:800;color:var(--bad);font-size:15px}
+  .pc li .rev{display:block;font-size:11.5px;color:var(--muted);font-style:italic;margin-top:3px}
+
+  .barrow{display:grid;grid-template-columns:135px 1fr 62px;align-items:center;gap:12px;margin:10px 0}
   .barrow .lb{font-size:13px;font-weight:700}
-  .barrow .track{background:color-mix(in srgb,var(--line) 60%,transparent);border-radius:7px;height:26px;overflow:hidden}
-  .barrow .fill{height:100%;border-radius:7px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-size:12px;font-weight:800}
-  .barrow .vv{font-size:13px;font-weight:700;text-align:right;color:var(--muted)}
+  .barrow .track{background:color-mix(in srgb,var(--line2) 70%,transparent);border-radius:5px;height:28px;overflow:hidden}
+  .barrow .fill{height:100%;border-radius:5px;display:flex;align-items:center;justify-content:flex-end;padding-right:9px;color:#fff;font-size:12.5px;font-weight:800}
+  .barrow .vv{font-size:12.5px;font-weight:700;text-align:right;color:var(--muted)}
   .f-sun{background:linear-gradient(90deg,var(--sun),var(--accent))}
   .f-mid{background:linear-gradient(90deg,var(--accent),var(--accent-d))}
-  .f-rain{background:linear-gradient(90deg,var(--rain),#2C5F8A)}
-  table{width:100%;border-collapse:collapse;font-size:14px;background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
-  th,td{padding:11px 14px;text-align:right;border-bottom:1px solid var(--line)}
+  .f-rain{background:linear-gradient(90deg,var(--rain),#274F70)}
+
+  table{width:100%;border-collapse:collapse;font-size:14px;background:var(--panel);border:1px solid var(--line);border-radius:11px;overflow:hidden}
+  th,td{padding:11px 15px;text-align:right;border-bottom:1px solid var(--line)}
   th:first-child,td:first-child{text-align:left}
-  thead th{background:color-mix(in srgb,var(--green) 6%,transparent);font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700}
+  thead th{background:color-mix(in srgb,var(--green) 7%,transparent);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:800}
   tbody tr:last-child td{border-bottom:0}
   td:first-child{font-weight:600;color:var(--ink)}
   .tag{font-size:11px;font-weight:800;padding:2px 9px;border-radius:6px;white-space:nowrap}
-  .t-sun{background:var(--sun-bg);color:var(--accent-d)} .t-rain{background:var(--rain-bg);color:var(--rain)} .t-mid{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent-d)}
-  .note{margin-top:16px;font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:14px}
+  .t-sun{background:var(--sun-bg);color:var(--accent-d)} .t-rain{background:var(--rain-bg);color:var(--rain)} .t-mid{background:color-mix(in srgb,var(--accent) 15%,transparent);color:var(--accent-d)}
+  .note{margin-top:16px;font-size:12px;color:var(--muted);border-top:1px dashed var(--line2);padding-top:14px;line-height:1.55}
+
   /* MONITOR */
-  .mon{background:linear-gradient(135deg,var(--green2),var(--green));color:#fff;border-radius:18px;padding:26px;box-shadow:var(--shadow)}
-  :root[data-theme="dark"] .mon{background:linear-gradient(135deg,#0F3B34,#0A2621)}
-  .mon .head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:18px}
-  .mon .live{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);padding:6px 13px;border-radius:999px;font-size:12px;font-weight:700}
-  .dot{width:8px;height:8px;border-radius:50%;background:#57e08a;animation:pulse 2s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(87,224,138,.6)}70%{box-shadow:0 0 0 8px rgba(87,224,138,0)}100%{box-shadow:0 0 0 0 rgba(87,224,138,0)}}
-  .mon .today{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-  .mon .emo{font-size:3.6rem;line-height:1}
-  .mon .temp{font-size:2.4rem;font-weight:800}
+  .mon{background:var(--green);color:#F3F1E9;border-radius:14px;padding:26px;position:relative;overflow:hidden}
+  :root[data-theme="dark"] .mon{background:linear-gradient(150deg,#0E2A25,#0A1B17);border:1px solid var(--line)}
+  .mon::after{content:"";position:absolute;right:-50px;top:-50px;width:170px;height:170px;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 30%,transparent),transparent 70%)}
+  .mon .head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:20px;position:relative}
+  .mon .live{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.13);padding:6px 13px;border-radius:999px;font-size:12px;font-weight:700}
+  .dot{width:8px;height:8px;border-radius:50%;background:#6ee79a;animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(110,231,154,.6)}70%{box-shadow:0 0 0 8px rgba(110,231,154,0)}100%{box-shadow:0 0 0 0 rgba(110,231,154,0)}}
+  .mon .today{display:flex;align-items:center;gap:20px;flex-wrap:wrap;position:relative}
+  .mon .emo{font-size:3.4rem;line-height:1}
+  .mon .temp{font-family:var(--serif);font-size:2.5rem;font-weight:700}
   .mon .verdict{margin-left:auto;text-align:right}
-  .mon .verdict .big{font-size:1.3rem;font-weight:800}
-  .mon .verdict .rec{font-size:1rem;opacity:.9;margin-top:2px}
-  .mon .rec b{background:rgba(255,255,255,.16);padding:2px 10px;border-radius:8px}
-  .fc{display:grid;grid-template-columns:repeat(7,1fr);gap:9px;margin-top:20px}
+  .mon .verdict .big{font-size:1.25rem;font-weight:800}
+  .mon .verdict .rec{font-size:.98rem;opacity:.92;margin-top:3px}
+  .mon .verdict .rec b{background:rgba(255,255,255,.16);padding:2px 10px;border-radius:7px}
+  .fc{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:20px;position:relative}
   @media(max-width:680px){.fc{grid-template-columns:repeat(4,1fr)}}
   @media(max-width:420px){.fc{grid-template-columns:repeat(2,1fr)}}
-  .fd{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 6px;text-align:center;border-top:4px solid var(--line)}
+  .fd{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px 6px;text-align:center;border-top:4px solid var(--line)}
   .fd.d-sun{border-top-color:var(--sun)} .fd.d-mid{border-top-color:var(--accent)} .fd.d-rain{border-top-color:var(--rain)} .fd.d-storm{border-top-color:var(--bad)}
-  .fd .dn{font-size:11px;font-weight:800;text-transform:uppercase;color:var(--muted)}
-  .fd .ic{font-size:1.6rem;margin:5px 0 2px}
+  .fd .dn{font-size:10.5px;font-weight:800;text-transform:uppercase;color:var(--muted)}
+  .fd .ic{font-size:1.55rem;margin:5px 0 2px}
   .fd .tp{font-size:12px;font-weight:700;color:var(--ink)}
   .fd .mm{font-size:11px;color:var(--muted);margin-top:2px}
-  .fd .sp{font-size:12px;font-weight:800;margin-top:6px;padding:3px 0;border-radius:6px}
-  .fd.d-sun .sp{background:var(--sun-bg);color:var(--accent-d)} .fd.d-mid .sp{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent-d)} .fd.d-rain .sp{background:var(--rain-bg);color:var(--rain)} .fd.d-storm .sp{background:var(--bad-bg);color:var(--bad)}
-  .loading{padding:30px;text-align:center;color:rgba(255,255,255,.8);font-size:14px}
+  .fd .sp{font-size:12px;font-weight:800;margin-top:7px;padding:3px 0;border-radius:6px}
+  .fd.d-sun .sp{background:var(--sun-bg);color:var(--accent-d)} .fd.d-mid .sp{background:color-mix(in srgb,var(--accent) 15%,transparent);color:var(--accent-d)} .fd.d-rain .sp{background:var(--rain-bg);color:var(--rain)} .fd.d-storm .sp{background:var(--bad-bg);color:var(--bad)}
+  .loading{padding:28px;text-align:center;color:rgba(243,241,233,.85);font-size:14px;position:relative}
   .mtable{margin-top:18px}
-  /* cidades vale */
+
+  /* Vale */
   .cidades{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
   @media(max-width:720px){.cidades{grid-template-columns:1fr 1fr}}
   @media(max-width:460px){.cidades{grid-template-columns:1fr}}
-  .cid{border:1px solid var(--line);border-radius:13px;padding:15px 16px;background:var(--paper);box-shadow:var(--shadow);border-left:5px solid var(--line)}
+  .cid{border:1px solid var(--line);border-radius:12px;padding:15px 16px;background:var(--panel);border-left:5px solid var(--line2)}
   .cid.r-ok{border-left-color:var(--good)} .cid.r-watch{border-left-color:var(--warn)} .cid.r-alert{border-left-color:var(--bad)}
   .cid .top{display:flex;align-items:center;justify-content:space-between;gap:8px}
   .cid .nm{font-weight:800;font-size:15px}
-  .cid .rt{font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px}
+  .cid .rt{font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:999px}
   .cid.r-ok .rt{background:var(--good-bg);color:var(--good)} .cid.r-watch .rt{background:var(--warn-bg);color:var(--warn)} .cid.r-alert .rt{background:var(--bad-bg);color:var(--bad)}
   .cid .met{margin-top:10px;display:flex;gap:14px;font-size:12.5px;color:var(--muted)}
   .cid .met b{color:var(--ink);font-weight:700}
-  .cid .act{margin-top:10px;font-size:12.5px;font-weight:700;padding-top:9px;border-top:1px dashed var(--line)}
+  .cid .act{margin-top:10px;font-size:12.5px;font-weight:700;padding-top:9px;border-top:1px dashed var(--line2)}
   .cid.r-ok .act{color:var(--good)} .cid.r-watch .act{color:var(--warn)} .cid.r-alert .act{color:var(--bad)}
   .summary{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
-  .schip{font-size:13px;font-weight:800;padding:8px 14px;border-radius:10px;display:flex;align-items:center;gap:7px}
+  .schip{font-size:13px;font-weight:800;padding:8px 14px;border-radius:9px;display:flex;align-items:center;gap:7px}
   .schip.ok{background:var(--good-bg);color:var(--good)} .schip.watch{background:var(--warn-bg);color:var(--warn)} .schip.alert{background:var(--bad-bg);color:var(--bad)}
-  footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12.5px;color:var(--muted)}
-  footer b{color:var(--green2)}
+
+  .colophon{background:var(--panel);border-top:1px solid var(--line);padding:22px clamp(22px,5vw,58px);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;color:var(--muted)}
+  .colophon b{color:var(--green2)}
+  .pgfoot{text-align:center;font-size:11.5px;color:var(--faint);margin:14px 0 30px}
 </style>
 </head>
 <body>
-<div class="doc">
-  <header>
-    <div class="rule"><span class="t"></span><span>Cardô Marketing · Estratégia de Verba</span></div>
-    <h1>Verba, Clima &amp; CPA — a decisão sobre as campanhas de venda</h1>
-    <div class="sub">Spitz Pomer · base de 64 dias (jul–set/2026) cruzada com o clima real de Pomerode</div>
-  </header>
-
-  <div class="tabs" role="tablist">
-    <button class="tab" role="tab" aria-selected="true" aria-controls="p1" id="t1">🛑 Parar as campanhas?</button>
-    <button class="tab" role="tab" aria-selected="false" aria-controls="p2" id="t2">🌧️ Chuva × CPA</button>
-    <button class="tab" role="tab" aria-selected="false" aria-controls="p3" id="t3">📡 Monitor automático</button>
-    <button class="tab" role="tab" aria-selected="false" aria-controls="p4" id="t4">🏞️ Vale do Itajaí</button>
+<div class="sheet">
+  <!-- ============ CAPA ============ -->
+  <div class="cover">
+    <div class="brandline"><span class="mk"></span><b>Cardô Marketing · Relatório Estratégico</b></div>
+    <div class="doc-t">Verba, Clima &amp; CPA</div>
+    <div class="doc-s">Análise da proposta de encerrar as campanhas de venda, o impacto real da chuva no custo por aquisição e o modelo de investimento guiado por clima — com monitores ao vivo.</div>
+    <div class="metabar">
+      <div class="m"><div class="k">Cliente</div><div class="v">Spitz Pomer · SC</div></div>
+      <div class="m"><div class="k">Documento</div><div class="v">Estratégia de verba</div></div>
+      <div class="m"><div class="k">Base de dados</div><div class="v">64 dias · jul–set 2026</div></div>
+      <div class="m"><div class="k">Preparado por</div><div class="v">Cardô Marketing</div></div>
+    </div>
   </div>
 
-  <!-- ============ ABA 1 ============ -->
-  <div class="pane on" id="p1" role="tabpanel" aria-labelledby="t1">
-    <div class="banner bad"><span>🛑</span><div><b>A proposta em cima da mesa:</b> desligar por completo as campanhas de venda — não só nos dias de chuva, mas parar mesmo. Abaixo, os dois lados com honestidade. Existe um ganho real; mas o custo é grande e quase todo irreversível.</div></div>
+  <!-- ============ NAV ============ -->
+  <div class="nav" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" aria-controls="p1" id="t1"><span class="ix">01</span> Parar as campanhas?</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="p2" id="t2"><span class="ix">02</span> Chuva × CPA</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="p3" id="t3"><span class="ix">03</span> Monitor de gasto</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="p4" id="t4"><span class="ix">04</span> Radar do Vale</button>
+  </div>
 
-    <section>
-      <div class="kick">O balanço</div>
-      <h2>Parar de vez: benefícios × malefícios</h2>
+  <!-- ============ CAP 01 ============ -->
+  <div class="pane on pad" id="p1" role="tabpanel" aria-labelledby="t1">
+    <div class="chapline"><span class="chapno">01</span><span class="kick">A decisão em análise</span></div>
+    <h2>Encerrar as campanhas de venda: vale a pena?</h2>
+    <p class="lead">Foi levantada a hipótese de <b>desligar por completo</b> as campanhas de venda — não apenas reduzir em dias de chuva. Este capítulo pesa os dois lados com honestidade: existe um ganho legítimo, mas os custos são amplos e, em grande parte, irreversíveis.</p>
+
+    <div class="callout bad" style="margin-bottom:26px"><span class="ic">■</span><div><b>O que está sobre a mesa:</b> zerar o investimento em campanhas de venda. A recomendação deste relatório é <b>não encerrar</b> — e a justificativa, baseada em dados, vem a seguir.</div></div>
+
+    <section style="margin-top:0">
       <div class="pc">
         <div class="col ben">
-          <h3>✓ Benefícios</h3>
-          <div class="cta">o que se ganha ao parar</div>
+          <h3>Benefícios</h3>
+          <div class="cta">o que se ganha ao encerrar</div>
           <ul>
-            <li><b>Economia total da verba de venda.</b> O gasto vai a zero imediatamente — é o ganho mais óbvio e o único de verdade.</li>
-            <li><b>Zero risco de CPA alto</b> num dia ruim.<span class="rev">→ mas isso a modulação por clima já entrega sem desligar.</span></li>
-            <li><b>Simplicidade operacional.</b> Nada pra monitorar.<span class="rev">→ troca gestão por perda de receita; não compensa.</span></li>
-            <li><b>Faz sentido só se</b> o objetivo for encerrar a operação de mídia — o que não é o caso.</li>
+            <li><b>Economia imediata da verba.</b> O gasto vai a zero na hora — é o ganho mais direto e o único de fato real.</li>
+            <li><b>Elimina o risco de CPA alto</b> em dias ruins.<span class="rev">Mas a modulação por clima já entrega isso sem desligar.</span></li>
+            <li><b>Simplicidade operacional.</b> Nada a monitorar diariamente.<span class="rev">Troca gestão leve por perda de receita — não compensa.</span></li>
+            <li><b>Só faz sentido</b> se o objetivo for encerrar a operação de mídia paga. Não é o caso.</li>
           </ul>
         </div>
         <div class="col mal">
-          <h3>✕ Malefícios</h3>
-          <div class="cta">o que se perde ao parar</div>
+          <h3>Malefícios</h3>
+          <div class="cta">o que se perde ao encerrar</div>
           <ul>
-            <li><b>Desliga a máquina de faturamento.</b> As campanhas rodam com ROAS 9–10× — cada R$1 vira R$9. Parar é abrir mão desse retorno.</li>
-            <li><b>Reinício da fase de aprendizado.</b> Ao religar, o algoritmo volta à estaca zero — dias de CPA alto até reaprender quem compra.</li>
-            <li><b>Perda dos públicos quentes.</b> Remarketing e lookalike levaram meses pra amadurecer; esfriam quando param.</li>
-            <li><b>Mata a venda antecipada.</b> Parque vende pro fim de semana seguinte — sem campanha, essa compra futura não acontece.</li>
-            <li><b>Buraco de dados.</b> Sem sinal de conversão, a otimização piora quando volta.</li>
-            <li><b>Perde o topo de funil</b> que alimenta a busca de marca e a venda direta depois.</li>
-            <li><b>Concorrente ocupa o leilão</b> que você desocupou — e retomar sai mais caro.</li>
+            <li><b>Desliga a máquina de faturamento.</b> As campanhas operam com ROAS de 9–10× — cada R$1 retorna cerca de R$9.</li>
+            <li><b>Reinício da fase de aprendizado.</b> Ao religar, o algoritmo volta ao zero — dias de CPA elevado até reaprender quem compra.</li>
+            <li><b>Perda dos públicos quentes.</b> Remarketing e lookalike levaram meses para amadurecer e esfriam ao pausar.</li>
+            <li><b>Mata a venda antecipada.</b> Parque vende para o fim de semana seguinte — sem campanha, essa compra futura não ocorre.</li>
+            <li><b>Buraco de dados.</b> Sem sinal de conversão, a otimização piora quando a operação retorna.</li>
+            <li><b>Perde o topo de funil</b> que alimenta a busca de marca e a venda direta posterior.</li>
+            <li><b>Cede espaço no leilão</b> ao concorrente — e reconquistar sai mais caro.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="banner key"><span>💡</span><div><b>Conclusão:</b> o único benefício real de parar — economizar a verba — é <b>100% alcançável sem desligar nada</b>: basta reduzir o orçamento nos dias que não convertem (a aba <b>Chuva × CPA</b> mostra como). Parar de vez troca uma economia pontual por semanas de aprendizado perdido, públicos frios e receita que não volta. <b>Não se desliga o motor; regula-se a aceleração.</b></div></div>
+      <div class="callout key"><span class="ic">◆</span><div><b>Conclusão do capítulo:</b> o único benefício real de encerrar — economizar verba — é <b>integralmente alcançável sem desligar nada</b>, apenas reduzindo o orçamento nos dias que não convertem (Capítulo 02). Encerrar de vez troca uma economia pontual por semanas de aprendizado perdido, públicos frios e receita que não retorna. A recomendação é clara: <b>não se desliga o motor; regula-se a aceleração.</b></div></div>
     </section>
   </div>
 
-  <!-- ============ ABA 2 ============ -->
-  <div class="pane" id="p2" role="tabpanel" aria-labelledby="t2">
+  <!-- ============ CAP 02 ============ -->
+  <div class="pane pad" id="p2" role="tabpanel" aria-labelledby="t2">
+    <div class="chapline"><span class="chapno">02</span><span class="kick">Evidência · dado real</span></div>
+    <h2>O impacto da chuva no custo por venda</h2>
+    <p class="lead">Cruzamos o CPA de cada um dos últimos 64 dias com a precipitação registrada em Pomerode. O padrão é inequívoco: <b>quando chove, cada venda custa muito mais e o retorno cai junto</b> — o que justifica reduzir, e não encerrar.</p>
+
     <section style="margin-top:0">
-      <div class="kick">A prova · dado real</div>
-      <h2>Quanto a chuva encarece cada venda</h2>
-      <p class="lead">Cruzamos o CPA de cada dia com a chuva registrada em Pomerode nos últimos 64 dias. O padrão é claro: <b>quando chove, a venda custa muito mais e rende muito menos</b>.</p>
+      <h3>CPA médio por faixa de chuva</h3>
       <div class="card">
         <div class="barrow"><span class="lb">☀️ Sol (&lt;1mm)</span><div class="track"><div class="fill f-sun" style="width:39%">R$ 39</div></div><span class="vv">39 dias</span></div>
         <div class="barrow"><span class="lb">🌦️ Garoa (1–5mm)</span><div class="track"><div class="fill f-mid" style="width:100%">R$ 100</div></div><span class="vv">8 dias</span></div>
         <div class="barrow"><span class="lb">🌧️ Chuva (5–15mm)</span><div class="track"><div class="fill f-rain" style="width:46%">R$ 46</div></div><span class="vv">7 dias</span></div>
         <div class="barrow"><span class="lb">⛈️ Temporal (&gt;15mm)</span><div class="track"><div class="fill f-rain" style="width:91%">R$ 91</div></div><span class="vv">8 dias</span></div>
-        <p class="note">CPA médio por faixa de chuva · vendas Meta · jul–set 2026. Dias secos: <b>R$ 39</b>. Garoa/temporal: <b>R$ 90–100</b>. Picos de temporal chegaram a <b>R$ 262 por venda</b>.</p>
+        <p class="note">CPA médio por faixa · campanhas de venda Meta · jul–set 2026. Dias secos: <b>R$ 39</b>. Garoa e temporal: <b>R$ 90–100</b>. Picos isolados de temporal chegaram a <b>R$ 262 por venda</b>.</p>
       </div>
-      <div class="cards3" style="margin-top:16px">
-        <div class="card kpi"><div class="l">CPA no sol</div><div class="v sun">R$ 39</div><div class="s">venda barata</div></div>
-        <div class="card kpi"><div class="l">CPA na chuva</div><div class="v bad">R$ 90–100</div><div class="s">2,5× mais caro</div></div>
-        <div class="card kpi"><div class="l">ROAS sol → chuva</div><div class="v rain">10× → 6×</div><div class="s">retorno cai 40%</div></div>
+      <div class="cards3" style="margin-top:14px">
+        <div class="kpi"><div class="l">CPA no sol</div><div class="v sun">R$ 39</div><div class="s">venda barata</div></div>
+        <div class="kpi"><div class="l">CPA na chuva</div><div class="v bad">R$ 90–100</div><div class="s">2,5× mais caro</div></div>
+        <div class="kpi"><div class="l">ROAS · sol → chuva</div><div class="v rain">10× → 6×</div><div class="s">retorno cai 40%</div></div>
       </div>
     </section>
 
     <section>
-      <div class="kick">A resposta</div>
-      <h2>Como investir em cada tipo de dia</h2>
-      <p class="lead">Em vez de parar, o orçamento diário acompanha o céu. As campanhas ficam <b>sempre ligadas</b> — muda só o teto de gasto e a mensagem.</p>
+      <h3>Modelo de investimento por tipo de dia</h3>
+      <p class="lead" style="margin-bottom:16px">Em vez de encerrar, o orçamento diário acompanha o céu. As campanhas permanecem <b>sempre ativas</b> — muda apenas o teto de gasto e a mensagem do criativo.</p>
       <table>
         <thead><tr><th>Cenário do dia</th><th>Vendas (Meta)</th><th>Google</th><th>Mensagem</th></tr></thead>
         <tbody>
@@ -227,70 +267,63 @@
           <tr><td><span class="tag t-sun">☀️ Sol + fim de semana</span></td><td>R$ 450+</td><td>máximo</td><td>"vem hoje"</td></tr>
         </tbody>
       </table>
-      <p class="note">A verba poupada na chuva vira <b>reserva</b> pros dias de sol. A soma do mês continua nos R$ 20k — só é gasta onde converte. Foi assim que agosto fechou cravado no alvo (R$ 20.027).</p>
+      <p class="note">A verba poupada na chuva vira <b>reserva</b> para os dias de sol. A soma do mês permanece nos R$ 20k — apenas gasta onde converte. Modelo já validado: agosto fechou cravado no alvo (R$ 20.027).</p>
     </section>
   </div>
 
-  <!-- ============ ABA 3 ============ -->
-  <div class="pane" id="p3" role="tabpanel" aria-labelledby="t3">
-    <section style="margin-top:0">
-      <div class="kick">Ao vivo · automático</div>
-      <h2>Monitor de CPA por clima — Pomerode</h2>
-      <p class="lead">Lê a previsão de Pomerode em tempo real e já calcula <b>o gasto recomendado de cada dia</b> em campanhas de venda — a regra da aba anterior aplicada automaticamente. É só bater o olho e ajustar o orçamento.</p>
-      <div class="mon" id="mon">
-        <div class="loading">Carregando clima de Pomerode ao vivo…</div>
-      </div>
-      <div class="mtable" id="mon-table"></div>
-      <p class="note">Fonte: Open-Meteo (ao vivo). Regra de gasto: ⛈️ &gt;15mm ou alerta de cidade → pausa · 🌧️ 5–15mm → até R$100 · 🌦️ 1–5mm → ~R$200 · ⛅ &lt;1mm → ~R$350 · ☀️ sol + fim de semana → R$450+. Valores de venda Meta; ajustar ao teto do mês.</p>
-    </section>
+  <!-- ============ CAP 03 ============ -->
+  <div class="pane pad" id="p3" role="tabpanel" aria-labelledby="t3">
+    <div class="chapline"><span class="chapno">03</span><span class="kick">Ferramenta · ao vivo</span></div>
+    <h2>Monitor de gasto por clima — Pomerode</h2>
+    <p class="lead">Lê a previsão de Pomerode em tempo real e calcula automaticamente <b>o gasto recomendado de cada dia</b> em campanhas de venda — o modelo do Capítulo 02, aplicado sozinho. Basta consultar e ajustar o orçamento.</p>
+    <div class="mon" id="mon"><div class="loading">Carregando clima de Pomerode ao vivo…</div></div>
+    <div class="mtable" id="mon-table"></div>
+    <p class="note">Fonte: Open-Meteo (ao vivo). Regra: ⛈️ &gt;15mm ou alerta de cidade → pausa · 🌧️ 5–15mm → até R$100 · 🌦️ 1–5mm → ~R$200 · ⛅ &lt;1mm → ~R$350 · ☀️ sol + fim de semana → R$450+. Valores referentes a vendas Meta; ajustar ao teto do mês.</p>
   </div>
 
-  <!-- ============ ABA 4 · VALE ============ -->
-  <div class="pane" id="p4" role="tabpanel" aria-labelledby="t4">
-    <section style="margin-top:0">
-      <div class="kick">Radar regional · ao vivo</div>
-      <h2>Vale do Itajaí — risco por cidade 🏞️</h2>
-      <p class="lead">Nosso público vem das cidades vizinhas. Quando uma delas entra em situação crítica de chuva — como <b>Blumenau embaixo d'água</b> — a gente pausa a venda pra aquela região <b>antes</b> de gastar à toa e antes de anunciar diversão na hora errada. O risco aqui olha a <b>chuva acumulada</b> (o que causa enchente), não só a do dia.</p>
-      <div class="summary" id="vale-summary"></div>
-      <div class="cidades" id="vale-cidades"><div class="card"><div style="color:var(--muted);text-align:center;padding:16px">Carregando cidades do Vale…</div></div></div>
-      <p class="note">Risco pela chuva prevista acumulada em 3 dias: 🟢 &lt;30mm normal · 🟡 30–80mm atenção · 🔴 &gt;80mm crítico (histórico de enchente na região). Fonte: Open-Meteo, ao vivo. É um <b>alerta de decisão</b>, não previsão oficial de Defesa Civil — sempre cruzar com as autoridades em evento real.</p>
-    </section>
+  <!-- ============ CAP 04 ============ -->
+  <div class="pane pad" id="p4" role="tabpanel" aria-labelledby="t4">
+    <div class="chapline"><span class="chapno">04</span><span class="kick">Radar regional · ao vivo</span></div>
+    <h2>Monitor do Vale do Itajaí — risco por cidade</h2>
+    <p class="lead">O público do parque vem das cidades vizinhas. Quando uma delas entra em situação crítica de chuva — como <b>Blumenau embaixo d'água</b> — pausamos a venda para aquela região <b>antes</b> de gastar à toa e antes de anunciar diversão na hora errada. O indicador observa a <b>chuva acumulada</b> (causa da enchente), não apenas a do dia.</p>
+    <div class="summary" id="vale-summary"></div>
+    <div class="cidades" id="vale-cidades"><div class="card" style="grid-column:1/-1"><div style="color:var(--muted);text-align:center;padding:14px">Carregando cidades do Vale…</div></div></div>
+    <p class="note">Risco pela chuva prevista acumulada em 3 dias: 🟢 &lt;30mm normal · 🟡 30–80mm atenção · 🔴 &gt;80mm crítico (faixa de histórico de enchente na região). Fonte: Open-Meteo, ao vivo. É um <b>alerta de decisão de mídia</b>, não previsão oficial de Defesa Civil — em evento real, sempre cruzar com as autoridades.</p>
     <section>
-      <div class="card">
-        <h3 style="font-size:15px;margin-bottom:10px">O que fazer em cada nível</h3>
-        <table>
-          <thead><tr><th>Nível</th><th>Campanhas de venda p/ a cidade</th><th>Criativos</th></tr></thead>
-          <tbody>
-            <tr><td><span class="tag" style="background:var(--good-bg);color:var(--good)">🟢 Normal</span></td><td>rodam normal (regra de clima)</td><td>todos</td></tr>
-            <tr><td><span class="tag" style="background:var(--warn-bg);color:var(--warn)">🟡 Atenção</span></td><td>reduz teto, vira p/ antecipação</td><td>evita "vem hoje"</td></tr>
-            <tr><td><span class="tag" style="background:var(--bad-bg);color:var(--bad)">🔴 Crítico</span></td><td>pausa venda p/ a região</td><td>pausa tudo de "diversão" (sensibilidade de marca)</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <h3>Protocolo por nível de risco</h3>
+      <table>
+        <thead><tr><th>Nível</th><th>Campanhas de venda p/ a cidade</th><th>Criativos</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag" style="background:var(--good-bg);color:var(--good)">🟢 Normal</span></td><td>rodam normal (regra de clima)</td><td>todos</td></tr>
+          <tr><td><span class="tag" style="background:var(--warn-bg);color:var(--warn)">🟡 Atenção</span></td><td>reduz teto, vira p/ antecipação</td><td>evita "vem hoje"</td></tr>
+          <tr><td><span class="tag" style="background:var(--bad-bg);color:var(--bad)">🔴 Crítico</span></td><td>pausa venda p/ a região</td><td>pausa tudo de "diversão" (sensibilidade de marca)</td></tr>
+        </tbody>
+      </table>
     </section>
   </div>
 
-  <footer>
+  <div class="colophon">
     <span><b>Cardô Marketing</b> — Tráfego &amp; Performance</span>
-    <span>Spitz Pomer · Verba × Clima × CPA</span>
-  </footer>
+    <span>Spitz Pomer · Relatório de Verba × Clima × CPA · 2026</span>
+  </div>
 </div>
+<div class="pgfoot">Documento interno · dados ao vivo atualizam a cada acesso</div>
 
 <script>
-/* ---- tabs ---- */
+/* ---- navegação de capítulos ---- */
 const tabs=[...document.querySelectorAll('.tab')];
 tabs.forEach(t=>t.addEventListener('click',()=>{
   tabs.forEach(x=>x.setAttribute('aria-selected','false'));
   document.querySelectorAll('.pane').forEach(p=>p.classList.remove('on'));
   t.setAttribute('aria-selected','true');
   document.getElementById(t.getAttribute('aria-controls')).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
 }));
 
-/* ---- monitor de clima ao vivo ---- */
+/* ---- monitor de clima (Pomerode) ---- */
 const WMO={0:'☀️',1:'🌤️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',51:'🌦️',53:'🌦️',55:'🌧️',61:'🌧️',63:'🌧️',65:'🌧️',80:'🌦️',81:'🌧️',82:'⛈️',95:'⛈️',96:'⛈️',99:'⛈️'};
 const DN=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
 function plan(mm,prob,isWknd){
-  // retorna [classe, rótulo, gasto recomendado, mensagem]
   if(mm>=15) return ['storm','⛈️ Temporal','Pausar vendas','Só antecipação'];
   if(mm>=5||prob>=70) return ['rain','🌧️ Chuva forte','Até R$ 100','"Compre e escolha o dia"'];
   if(mm>=1||prob>=50) return ['mid','🌦️ Instável','~R$ 200','Mensagem mista'];
@@ -322,17 +355,16 @@ function plan(mm,prob,isWknd){
           <div class="mm">💧 ${d.precipitation_sum[i].toFixed(0)}mm</div>
           <div class="sp">${p[2]}</div></div>`;
       }).join('')}</div>`;
-    // tabela detalhada
     document.getElementById('mon-table').innerHTML=`<table><thead><tr><th>Dia</th><th>Chuva</th><th>Cenário</th><th>Gasto vendas</th><th>Mensagem</th></tr></thead><tbody>${
       d.time.map((t,i)=>{const dt=new Date(t+'T12:00');const wknd=[0,6].includes(dt.getDay());const p=plan(d.precipitation_sum[i],d.precipitation_probability_max[i],wknd);
       return `<tr><td>${i===0?'Hoje':DN[dt.getDay()]} ${String(dt.getDate()).padStart(2,'0')}/${String(dt.getMonth()+1).padStart(2,'0')}</td><td>${d.precipitation_sum[i].toFixed(0)}mm · ${d.precipitation_probability_max[i]}%</td><td><span class="tag t-${p[0]==='sun'?'sun':p[0]==='mid'?'mid':'rain'}">${p[1]}</span></td><td><b>${p[2]}</b></td><td style="color:var(--muted);font-size:13px">${p[3]}</td></tr>`;}).join('')
     }</tbody></table>`;
   }catch(e){
-    document.getElementById('mon').innerHTML='<div class="loading">Não consegui carregar o clima agora. <button onclick="location.reload()" style="margin-left:8px;padding:6px 14px;border:0;border-radius:8px;background:#fff;color:#0B5A4F;font-weight:700;cursor:pointer">Tentar de novo</button></div>';
+    document.getElementById('mon').innerHTML='<div class="loading">Não consegui carregar o clima agora. <button onclick="location.reload()" style="margin-left:8px;padding:6px 14px;border:0;border-radius:8px;background:#fff;color:#0B4A42;font-weight:700;cursor:pointer">Tentar de novo</button></div>';
   }
 })();
 
-/* ---- Vale do Itajaí: risco por cidade (chuva acumulada 3 dias) ---- */
+/* ---- Radar do Vale (chuva acumulada 3 dias) ---- */
 const VALE=[
   {nm:'Pomerode',lat:-26.74,lon:-49.18,base:true},
   {nm:'Blumenau',lat:-26.92,lon:-49.07},
@@ -344,7 +376,7 @@ const VALE=[
   {nm:'Rio do Sul',lat:-27.21,lon:-49.64},
   {nm:'Jaraguá do Sul',lat:-26.49,lon:-49.07}
 ];
-function risco(acc3){ // mm acumulados em 3 dias
+function risco(acc3){
   if(acc3>=80) return ['alert','🔴 Crítico','Pausar venda p/ a região'];
   if(acc3>=30) return ['watch','🟡 Atenção','Reduzir e antecipar'];
   return ['ok','🟢 Normal','Rodar normal'];
@@ -373,7 +405,7 @@ function risco(acc3){ // mm acumulados em 3 dias
     chips.push(`<span class="schip ok">🟢 ${nOk} normais</span>`);
     document.getElementById('vale-summary').innerHTML=chips.join('');
   }catch(e){
-    box.innerHTML='<div class="card"><div style="color:var(--bad);text-align:center;padding:16px">Não consegui carregar as cidades. <button onclick="location.reload()" style="margin-left:8px;padding:6px 14px;border:0;border-radius:8px;background:var(--green);color:#fff;font-weight:700;cursor:pointer">Tentar de novo</button></div></div>';
+    box.innerHTML='<div class="card" style="grid-column:1/-1"><div style="color:var(--bad);text-align:center;padding:14px">Não consegui carregar as cidades. <button onclick="location.reload()" style="margin-left:8px;padding:6px 14px;border:0;border-radius:8px;background:var(--green);color:#fff;font-weight:700;cursor:pointer">Tentar de novo</button></div></div>';
   }
 })();
 </script>
